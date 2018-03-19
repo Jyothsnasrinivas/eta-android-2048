@@ -5,6 +5,7 @@
 ## Prerequisites
 - JDK 8
 - [Eta](https://eta-lang.org/docs/eta-concepts/getting-started/install-eta#source-installation) (Build from source)
+- [gradle-eta](https://github.com/typelead/gradle-eta)
 
 ## Running
 
