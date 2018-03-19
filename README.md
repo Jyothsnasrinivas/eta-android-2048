@@ -9,7 +9,7 @@
 ## Running
 
 ```
-$ clone https://github.com/Jyothsnasrinivas/eta-android-2048.git
+$ git clone https://github.com/Jyothsnasrinivas/eta-android-2048.git
 $ cd eta-android-2048
 $ ./gradlew assembleDebug
 ```
