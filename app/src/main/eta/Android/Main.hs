@@ -26,6 +26,7 @@ playAndroid view updateRef swipe worldPaint
         world  <- readIORef worldSR
         world' <- worldHandleEvent swipeEvent world
         writeIORef worldSR world'
+        return True
 
   javaWith swipe . setListener $
     makeSwipeListener

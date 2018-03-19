@@ -96,14 +96,15 @@ data SwipeListener = SwipeListener @com.github.pwittchen.swipe.library.rx2.Swipe
   deriving Class
 
 type SwipeHandler = MotionEvent -> Java SwipeListener ()
+type BooleanSwipeHandler = MotionEvent -> Java SwipeListener Bool
 
 defaultSwipeHandler :: SwipeHandler
 defaultSwipeHandler _ = return ()
 
 foreign import java unsafe
   "@wrapper onSwipingLeft,onSwipedLeft,onSwipingRight,onSwipedRight,onSwipingUp,onSwipedUp,onSwipingDown,onSwipedDown" makeSwipeListener
-  :: SwipeHandler -> SwipeHandler -> SwipeHandler -> SwipeHandler
-  -> SwipeHandler -> SwipeHandler -> SwipeHandler -> SwipeHandler
+  :: SwipeHandler -> BooleanSwipeHandler -> SwipeHandler -> BooleanSwipeHandler
+  -> SwipeHandler -> BooleanSwipeHandler -> SwipeHandler -> BooleanSwipeHandler
   -> SwipeListener
 
 -- Swipe

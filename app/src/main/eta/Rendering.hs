@@ -7,19 +7,19 @@ import GameModel
 import Types
 
 rowHeight :: Float
-rowHeight = 100
+rowHeight = 240
 
 tilePrecision :: Int
-tilePrecision = 10
+tilePrecision = 24
 
 tileS :: Float
-tileS = 90
+tileS = 216
 
 tileRoundness :: Float
 tileRoundness = 20
 
 textScale :: Float
-textScale = 5
+textScale = 8
 
 tileBackColor :: Color
 tileBackColor = makeColorI 205 192 180 255
@@ -32,11 +32,12 @@ drawTile :: Float -> Tile -> Picture
 drawTile x tile =
     let background = [color (tileColor tile) $ roundedRect tilePrecision tileS tileS tileRoundness]
         number = if tileToInt tile > 0
-                   then [translate 0 (-30) $
-                         scale scaleFactor scaleFactor
+                   then [color black
+                         $ translate 0 (-22)
+                         $ scale scaleFactor scaleFactor
                          $ text $ show $ tileToInt tile]
                    else []
-        scaleFactor = textScale / 1.7
+        scaleFactor = textScale
         curScale = 1
     in pictures [ drawTileBack x
                 , translate x 0 $ scale curScale curScale $ pictures $ background ++ number
@@ -65,14 +66,14 @@ drawBoard :: GameState -> Picture
 drawBoard gameState =
     let (Board b) = board gameState
         [r1, r2, r3, r4] = b
-    in translate 150 75
-     $ pictures
+    in translate (-60) 0 $
+       pictures
      $ [ drawRow r1
        , translate 0 (-rowHeight) (drawRow r2)
        , translate 0 (-rowHeight * 2) (drawRow r3)
        , translate 0 (-rowHeight * 3) (drawRow r4)
-       , translate (-160) (-95) $
-         scale (textScale / 3) (textScale / 3) $
+       , translate (-20) (-50) $
+         scale 10 10 $
          color black $ text $ "Score: " ++ show (score gameState)
        ] ++ gameOverPicture
   where gameOverPicture = [gameOverMessage | status gameState == GameOver]
