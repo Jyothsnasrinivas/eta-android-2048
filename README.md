@@ -1,6 +1,6 @@
 # Eta Android 2048
 
-![eta-android-2048 preview](eta2048.gif)
+![eta-android-2048 preview](eta-android-2048.gif)
 
 ## Prerequisites
 - JDK 8
