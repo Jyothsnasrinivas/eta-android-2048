@@ -15,8 +15,15 @@ $ ./gradlew assembleDebug
 ```
 ## Testing on mobile or emulator
 
-If you want to test it on your phone first enable the developer mode and run the command. Similarly for testing on emulator.
+If you want to test it on your phone first enable the developer mode and run the command below. Similarly for testing on emulator.
 
 ```
 $ ./gradlew installDebug
 ```
+
+## Release APK
+
+If you want to build the release apk which has proguard enabled, run the command below:
+
+```
+$ ./gradlew assembleRelease
