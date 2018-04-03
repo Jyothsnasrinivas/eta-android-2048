@@ -14,13 +14,10 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'),
+                          getDefaultEtaProguardFile()
         }
-        // debug {
-        //     minifyEnabled fa
-        //     proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        // }
     }
 }
 
@@ -29,11 +26,9 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     implementation 'com.github.pwittchen:swipe-rx2:0.3.0'
+    implementation eta('Yampa:0.10.7')
+    implementation eta('random:1.1')
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-    eta {
-      compile 'Yampa:0.10.7'
-      compile 'random:1.1'
-    }
 }

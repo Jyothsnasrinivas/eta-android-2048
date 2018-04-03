@@ -1,5 +1,4 @@
 buildscript {
-    
     repositories {
         google()
         jcenter()
@@ -7,7 +6,7 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.0.1'
-        classpath 'com.typelead:gradle-eta:0.5.0'
+        classpath 'com.typelead:gradle-eta:0.5.3'
     }
 }
 
@@ -19,7 +18,7 @@ allprojects {
     }
 }
 
-apply plugin: 'eta-android'
+apply plugin: 'eta-base'
 
 eta {
   useSystemEta   = true
