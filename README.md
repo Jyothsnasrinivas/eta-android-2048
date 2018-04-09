@@ -3,9 +3,7 @@
 ![eta-android-2048 preview](eta-android-2048.gif)
 
 ## Prerequisites
-- JDK 8
-- [Eta](https://eta-lang.org/docs/eta-concepts/getting-started/install-eta#source-installation) (Build from source)
-- [gradle-eta](https://github.com/typelead/gradle-eta)
+- JDK 8 or above
 
 ## Running
 
@@ -22,6 +20,7 @@
    ```
    sdk.dir=[SDK-Path-Here]
    ```
+
 3. Build the APK.
 
    ```
