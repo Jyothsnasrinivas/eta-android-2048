@@ -2,25 +2,26 @@ buildscript {
     repositories {
         google()
         jcenter()
-        mavenLocal()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.0.1'
-        classpath 'com.typelead:gradle-eta:0.5.3'
     }
+}
+
+plugins {
+    id 'com.typelead.eta.base' version '0.5.4'
 }
 
 allprojects {
     repositories {
         google()
         jcenter()
-        mavenLocal()
     }
 }
 
 apply plugin: 'eta-base'
 
 eta {
-  useSystemEta   = true
-  useSystemEtlas = true
+    version = '0.7.2b1'
+    etlasVersion = '1.3.0.0'
 }

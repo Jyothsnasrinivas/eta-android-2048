@@ -1,3 +1,7 @@
+plugins {
+    id 'com.typelead.eta.android'
+}
+
 apply plugin: 'com.android.application'
 apply plugin: 'eta-android'
 
